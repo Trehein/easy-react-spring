@@ -1,12 +1,14 @@
-// import React, { useState } from 'react'
-// import { storiesOf } from '@storybook/react'
+// import React, { useState } from 'react';
+// import { DemoBoxWithAnimation } from '../demoComponents/DemoBox/DemoBoxWithAnimations';
+// import { AnimatedComponent } from '../components';
+// import { DemoBox } from '../demoComponents';
 
-// import { AnimatedComponent } from '../components'
-// import {DemoBox} from '../demoComponents'
+// export default {
+//     title: 'DemoBoxWithAnimation',
+//     component: DemoBoxWithAnimation
+// }
 
-// const stories = storiesOf('Animated Component Test', module)
-
-// stories.add('Animated Component', () => {
+// export const Primary = () => {
 //     const [isActive, setIsActive] = useState(false)
 //     return (
 //         <div 
@@ -22,4 +24,4 @@
 //             </AnimatedComponent>
 //         </div>
 //     )
-// })
+// }

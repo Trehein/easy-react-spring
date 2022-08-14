@@ -4,31 +4,35 @@ import { animated } from 'react-spring'
 
 export type AnimatedComponentProps = {
     children: React.ReactNode,
-    isActive: boolean
+    isPassive: boolean,
 }
 
 export const AnimatedComponent: React.FC<AnimatedComponentProps> = (props) => {
-    const {isActive} = props
-    const backgroundColorSpringStyles = backgroundColorSpring(isActive, '#333333', '#999999')
-    const textColorSpringStyles = textColorSpring(isActive, 'black', 'yellow')
-    const scaleSpringStyles = scaleSpring(isActive, 1.25)
-    const fontSizeSpringStyles = fontSizeSpring(isActive, '1.25em')
-    const heightSpringStyles = heightSpring(isActive, '400px')
-    const widthSpringStyles = widthSpring(isActive, '400px')
-    const borderRadiusSpringStyles = borderRadiusSpring(isActive, '50% 0% 0% 50%')
+    const {isPassive} = props
+    const backgroundColorSpringStyles = backgroundColorSpring(isPassive, 'salmon', 'rebeccapurple')
+    const textColorSpringStyles = textColorSpring(isPassive, 'rebeccapurple', 'salmon')
+    const scaleSpringStyles = scaleSpring(isPassive, 1, 1.25)
+    const fontSizeSpringStyles = fontSizeSpring(isPassive, '1em', '1.25em')
+    const heightSpringStyles = heightSpring(isPassive, '200px', '400px')
+    const widthSpringStyles = widthSpring(isPassive, '200px', '400px')
+    const borderRadiusSpringStyles = borderRadiusSpring(isPassive, '50% 50% 50% 50%', '50% 0% 0% 50%')
     
     const {children} = props
     
     return (
-        <animated.div style={{
-            ...backgroundColorSpringStyles, 
-            ...textColorSpringStyles, 
-            ...fontSizeSpringStyles, 
-            ...heightSpringStyles, 
-            ...widthSpringStyles,
-            ...borderRadiusSpringStyles
-        }}>
-            {children}
-        </animated.div>
+        <>
+            {
+                <animated.div style={{
+                    ...backgroundColorSpringStyles, 
+                    ...textColorSpringStyles, 
+                    ...fontSizeSpringStyles, 
+                    ...heightSpringStyles, 
+                    ...widthSpringStyles,
+                    ...borderRadiusSpringStyles,
+                }}>
+                    {children}
+                </animated.div>
+            }
+        </>
     )
 }

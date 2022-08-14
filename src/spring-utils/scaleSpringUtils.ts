@@ -1,61 +1,56 @@
 import { useSpring } from "react-spring"
 
-export const scaleSpring = (isActive: boolean, activeScale: number): object => {
+export const scaleSpring = (isPassive: boolean, passiveScale: number, activeScale: number): object => {
     return useSpring({
-        from: { scale: 1 },
-        to: { scale: activeScale},
+        to: { 
+            scale: isPassive ? passiveScale : activeScale
+        },
         config: {
             duration: 500
         },
-        reverse: isActive    
+        reverse: isPassive    
     })
 } 
 
-export const fontSizeSpring = (isActive: boolean, activeFontSize: string): object => {
+export const fontSizeSpring = (isPassive: boolean, passiveFontSize: string, activeFontSize: string): object => {
     return useSpring({
-        from: { fontSize: '1em' },
-        to: { fontSize: activeFontSize },
-        config: {
-            duration: 500
-        },
-        reverse: isActive    
-    })
-}
-
-export const heightSpring = (isActive: boolean, activeHeight: string): object => {
-    return useSpring({
-        from: { 
-            height: '200px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontFamily: 'sans-serif'
-        },
         to: { 
-            height: activeHeight, 
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontFamily: 'sans-serif'
+            fontSize: isPassive ? passiveFontSize : activeFontSize 
         },
         config: {
             duration: 500
         },
-        reverse: isActive  
+        reverse: isPassive    
     })
 }
 
-export const widthSpring = (isActive: boolean, activeWidth: string): object => {
+export const heightSpring = (isPassive: boolean, passiveHeight: string, activeHeight: string): object => {
     return useSpring({
-        from: { 
-            width: '200px',
+        // enter: { 
+        //     height: !isActive ? passiveHeight : activeHeight, 
+        //     display: 'flex',
+        //     justifyContent: 'center',
+        //     alignItems: 'center',
+        //     fontFamily: 'sans-serif'
+        // },
+        to: { 
+            height: isPassive ? passiveHeight : activeHeight, 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             fontFamily: 'sans-serif'
         },
+        config: {
+            duration: 500
+        },
+        reverse: isPassive  
+    })
+}
+
+export const widthSpring = (isActive: boolean, passiveWidth: string, activeWidth: string): object => {
+    return useSpring({
         to: { 
-            width: activeWidth, 
+            width: isActive ? passiveWidth : activeWidth, 
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',

@@ -1,28 +1,25 @@
 import { useSpring } from "react-spring"
 
-export const textColorSpring = (isActive: boolean, activeColor: string, passiveColor: string): object => {
+export const textColorSpring = (isPassive: boolean, activeColor: string, passiveColor: string): object => {
     return useSpring({
-        from: { color: passiveColor },
-        to: { color: activeColor},
+        to: { 
+            color: isPassive ? passiveColor : activeColor
+        },
         config: {
             duration: 500
-
         },
-        reverse: isActive
+        reverse: isPassive
     })
 } 
 
-export const backgroundColorSpring = (isActive: boolean, activeColor: string, passiveColor: string): object => {
+export const backgroundColorSpring = (isPassive: boolean, activeColor: string, passiveColor: string): object => {
     return useSpring({
-        from: { 
-            backgroundColor: passiveColor, 
-        },
         to: { 
-            backgroundColor: activeColor, 
+            backgroundColor: isPassive ? passiveColor : activeColor, 
         },
         config: {
             duration: 500
         },
-        reverse: isActive
+        reverse: isPassive
     })
 }
