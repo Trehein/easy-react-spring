@@ -12,6 +12,8 @@ export const textColorSpring = (isPassive: boolean, activeColor: string, passive
     })
 } 
 
+
+
 export const backgroundColorSpring = (isPassive: boolean, activeColor: string, passiveColor: string): object => {
     return useSpring({
         to: { 

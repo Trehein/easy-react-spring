@@ -10,9 +10,6 @@ export default {
 }
 
 const Template = (args: any) => {
-    // <DemoBoxWithAnimation />
-    console.log(args)
-    // const [isActive, setIsActive] = useState(false)
     return (
         <DemoBoxWithAnimation />
     )
