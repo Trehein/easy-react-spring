@@ -12,10 +12,44 @@ export type TextColorSpringParams = {
     passiveTextColor: string
 }
 
+export type ScaleSpringParams = {
+    springType: SpringTypeEnum,
+    activeScale: number,
+    passiveScale: number
+}
+
+export type FontSizeSpringParams = {
+    springType: SpringTypeEnum,
+    activeFontSize: string,
+    passiveFontSize: string
+}
+
+export type HeightSpringParams = {
+    springType: SpringTypeEnum,
+    activeHeight: string,
+    passiveHeight: string
+}
+
+export type WidthSpringParams = {
+    springType: SpringTypeEnum,
+    activeWidth: string,
+    passiveWidth: string
+}
+
+export type BorderRadiusSpring = {
+    springType: SpringTypeEnum,
+    activeBorderRadius: string,
+    passiveBorderRadius: string
+}
+
 export enum SpringTypeEnum {
     BackgroundColorSpring = 'BackgroundColorSpring',
-    TextColorSpring = 'TextColorSpring'
-
+    TextColorSpring = 'TextColorSpring',
+    ScaleSpring = 'ScaleSpring',
+    FontSizeSpring = 'FontSizeSpring',
+    HeightSpring = 'HeightSpring',
+    WidthSpring = 'WidthSpring',
+    BorderRadiusSpring = 'BorderRadiusSpring'
 }
 
 export type ActiveSpringsArray = Array<availableSpringParams>

@@ -15,7 +15,28 @@ export const DemoBoxWithAnimation: React.FC = () => {
             springType: SpringTypeEnum.TextColorSpring,
             activeTextColor: 'salmon',
             passiveTextColor: 'rebeccapurple'
+        },
+        {
+            springType: SpringTypeEnum.FontSizeSpring,
+            activeFontSize: '1.5em',
+            passiveFontSize: '1em'
+        },
+        {
+            springType: SpringTypeEnum.HeightSpring,
+            activeHeight: '250px',
+            passiveHeight: '200px'
+        },
+        {
+            springType: SpringTypeEnum.WidthSpring,
+            activeWidth: '250px',
+            passiveWidth: '200px'
+        },
+        {
+            springType: SpringTypeEnum.BorderRadiusSpring,
+            activeBorderRadius: '50% 0% 0% 50%',
+            passiveBorderRadius: '50% 50% 50% 50%'
         }
+
     ]
 
     return (

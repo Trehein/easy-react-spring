@@ -1,6 +1,6 @@
 import { useSpring } from "react-spring"
 
-export const scaleSpring = (isPassive: boolean, passiveScale: number, activeScale: number): object => {
+export const scaleSpring = (isPassive: boolean, activeScale: number, passiveScale: number): object => {
     return useSpring({
         to: { 
             scale: isPassive ? passiveScale : activeScale
@@ -12,7 +12,7 @@ export const scaleSpring = (isPassive: boolean, passiveScale: number, activeScal
     })
 } 
 
-export const fontSizeSpring = (isPassive: boolean, passiveFontSize: string, activeFontSize: string): object => {
+export const fontSizeSpring = (isPassive: boolean, activeFontSize: string, passiveFontSize: string): object => {
     return useSpring({
         to: { 
             fontSize: isPassive ? passiveFontSize : activeFontSize 
@@ -24,15 +24,8 @@ export const fontSizeSpring = (isPassive: boolean, passiveFontSize: string, acti
     })
 }
 
-export const heightSpring = (isPassive: boolean, passiveHeight: string, activeHeight: string): object => {
+export const heightSpring = (isPassive: boolean, activeHeight: string, passiveHeight: string): object => {
     return useSpring({
-        // enter: { 
-        //     height: !isActive ? passiveHeight : activeHeight, 
-        //     display: 'flex',
-        //     justifyContent: 'center',
-        //     alignItems: 'center',
-        //     fontFamily: 'sans-serif'
-        // },
         to: { 
             height: isPassive ? passiveHeight : activeHeight, 
             display: 'flex',
@@ -47,7 +40,7 @@ export const heightSpring = (isPassive: boolean, passiveHeight: string, activeHe
     })
 }
 
-export const widthSpring = (isActive: boolean, passiveWidth: string, activeWidth: string): object => {
+export const widthSpring = (isActive: boolean, activeWidth: string, passiveWidth: string): object => {
     return useSpring({
         to: { 
             width: isActive ? passiveWidth : activeWidth, 
