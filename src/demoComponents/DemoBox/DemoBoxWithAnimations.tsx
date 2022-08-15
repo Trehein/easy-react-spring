@@ -7,9 +7,14 @@ export const DemoBoxWithAnimation: React.FC = () => {
     const [isPassive, setIsPassive] = useState(true)
     const springs: ActiveSpringsArray = [
         {
-            springType: SpringTypeEnum.BackgroundSpring,
+            springType: SpringTypeEnum.BackgroundColorSpring,
             activeBackgroundColor: 'rebeccapurple',
             passiveBackgroundColor: 'salmon',
+        },
+        {
+            springType: SpringTypeEnum.TextColorSpring,
+            activeTextColor: 'salmon',
+            passiveTextColor: 'rebeccapurple'
         }
     ]
 

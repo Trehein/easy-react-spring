@@ -1,5 +1,5 @@
 import React from 'react'
-import { backgroundColorSpring, heightSpring, fontSizeSpring, scaleSpring, textColorSpring, widthSpring, borderRadiusSpring, springStylesConstructor } from '../../spring-utils'
+import { heightSpring, fontSizeSpring, scaleSpring, widthSpring, borderRadiusSpring, springStylesConstructor } from '../../spring-utils'
 import { animated } from 'react-spring'
 import { ActiveSpringsArray } from './AnimatedComponentTypes'
 
@@ -14,15 +14,12 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = (props) => {
 
     const springStyles = springStylesConstructor({isPassive, springs})
 
-    const backgroundColorSpringStyles = backgroundColorSpring(isPassive, 'salmon', 'rebeccapurple')
-    const textColorSpringStyles = textColorSpring(isPassive, 'rebeccapurple', 'salmon')
+    // const textColorSpringStyles = textColorSpring(isPassive, 'rebeccapurple', 'salmon')
     const scaleSpringStyles = scaleSpring(isPassive, 1, 1.25)
     const fontSizeSpringStyles = fontSizeSpring(isPassive, '1em', '1.25em')
     const heightSpringStyles = heightSpring(isPassive, '200px', '400px')
     const widthSpringStyles = widthSpring(isPassive, '200px', '400px')
     const borderRadiusSpringStyles = borderRadiusSpring(isPassive, '50% 50% 50% 50%', '50% 0% 0% 50%')
-
-
     
     const {children} = props
     
@@ -30,8 +27,6 @@ export const AnimatedComponent: React.FC<AnimatedComponentProps> = (props) => {
         <>
             {
                 <animated.div style={{
-                    // ...backgroundColorSpringStyles, 
-                    ...textColorSpringStyles, 
                     ...fontSizeSpringStyles, 
                     ...heightSpringStyles, 
                     ...widthSpringStyles,

@@ -1,9 +1,9 @@
 import { useSpring } from "react-spring"
 
-export const textColorSpring = (isPassive: boolean, activeColor: string, passiveColor: string): object => {
+export const textColorSpring = (isPassive: boolean, activeTextColor: string, passiveTextColor: string): object => {
     return useSpring({
         to: { 
-            color: isPassive ? passiveColor : activeColor
+            color: isPassive ? passiveTextColor : activeTextColor
         },
         config: {
             duration: 500
@@ -12,12 +12,10 @@ export const textColorSpring = (isPassive: boolean, activeColor: string, passive
     })
 } 
 
-
-
-export const backgroundColorSpring = (isPassive: boolean, activeColor: string, passiveColor: string): object => {
+export const backgroundColorSpring = (isPassive: boolean, activeBackgroundColor: string, passiveBackgroundColor: string): object => {
     return useSpring({
         to: { 
-            backgroundColor: isPassive ? passiveColor : activeColor, 
+            backgroundColor: isPassive ? passiveBackgroundColor : activeBackgroundColor, 
         },
         config: {
             duration: 500
