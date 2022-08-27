@@ -56,8 +56,6 @@ export type OpacitySpring = {
 
 export type BorderSpring = {
     springType: SpringTypeEnum,
-    // activeBorderWidth?: string,
-    // passiveBorderWidth?: string,
     activeBorderWidth: string,
     passiveBorderWidth: string,
     activeBorderStyle: string,

@@ -41,6 +41,17 @@ const Template = (args: any) => {
     )
 }
 
+const backgroundColorArgs = {
+        activeBackgroundColor: 'red', 
+        passiveBackgroundColor: 'orange',
+        demoSpringArrayEnum: DemoSpringArray.BackgroundColorSpring
+    }
+
+export const BackgroundColorSpring = Template.bind({});
+BackgroundColorSpring.args = {
+    ...backgroundColorArgs,
+};
+
 const everyArgs = {
         activeBorderRadius: '20% 0% 0% 10%',
         passiveBorderRadius: '50% 50% 50% 50%',

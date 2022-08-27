@@ -1,6 +1,10 @@
 import { useSpring } from 'react-spring'
 
-export const borderRadiusSpring = (isPassive: boolean, activeBorderRadius: string, passiveBorderRadius: string): object => {
+export const borderRadiusSpring = (
+        isPassive: boolean, 
+        activeBorderRadius: string, 
+        passiveBorderRadius: string
+    ): object => {
     // console.log('isPassive borderRadius', isPassive)
     return useSpring({
         // from: {

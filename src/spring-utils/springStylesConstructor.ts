@@ -13,7 +13,7 @@ export const springStylesConstructor = (params: SpringStylesConstructorParams): 
     const {isPassive, springs} = params
     let springStylesObj: object = {}
 
-    console.log('springs in springStylesConstructor', springs)
+    // console.log('springs in springStylesConstructor', springs)
 
     springs.forEach((spring: any) => {
         const springStylesConstructorObj = springStylesConstructorTypeSwitch({isPassive, spring})
@@ -42,8 +42,6 @@ export type AvailableSpringParams = {
     passiveRotateZ? : number,
     activeOpacity? : number,
     passiveOpacity? : number,
-    activeBorder? : string,
-    passiveBorder? : string,
     activeBorderWidth? : string,
     passiveBorderWidth? : string,
     activeBorderStyle? : string,

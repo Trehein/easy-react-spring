@@ -1,4 +1,5 @@
 
 export enum DemoSpringArray {
-    EverySpring = 'EverySpring'
+    EverySpring = 'EverySpring',
+    BackgroundColorSpring = 'BackgroundColorSpring'
 }

@@ -83,7 +83,7 @@ export const everySpring = (params: AvailableSpringParams) => {
             passiveBorderWidth: passiveBorderWidth ? passiveBorderWidth : '.25em',
             activeBorderStyle: activeBorderStyle ? activeBorderStyle : 'dashed',
             passiveBorderStyle: passiveBorderStyle ? passiveBorderStyle : 'solid',
-            activeBorderColor: activeBorderColor ? activeBorderColor : 'orange',
+            activeBorderColor: activeBorderColor ? activeBorderColor : 'white',
             passiveBorderColor: passiveBorderColor ? passiveBorderColor : 'blue'
         }
     ]
