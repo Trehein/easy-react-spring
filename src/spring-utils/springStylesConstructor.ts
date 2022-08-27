@@ -2,6 +2,7 @@ import { ActiveSpringsArray, SpringTypeEnum } from "../components/AnimatedCompon
 import { borderRadiusSpring } from "./borderSpringUtils"
 import { backgroundColorSpring, textColorSpring } from "./colorSpringUtils"
 import { fontSizeSpring, heightSpring, scaleSpring, widthSpring } from "./sizeSpringUtils"
+import { rotateZSpring } from "./positionSpringUtils"
 
 export type SpringStylesConstructorParams = {
     springs: ActiveSpringsArray,
@@ -19,8 +20,8 @@ export const springStylesConstructor = (params: SpringStylesConstructorParams): 
     return springStylesObj
 }
 
-export type availableSpringParams = {
-    springType: SpringTypeEnum,
+export type AvailableSpringParams = {
+    springType?: SpringTypeEnum,
     activeBackgroundColor? : string,
     passiveBackgroundColor? : string,
     activeTextColor? : string,
@@ -34,16 +35,18 @@ export type availableSpringParams = {
     activeHeight? : string,
     passiveHeight? : string,
     activeBorderRadius? : string,
-    passiveBorderRadius? : string
+    passiveBorderRadius? : string,
+    activeRotateZ? : number,
+    passiveRotateZ? : number
 }
 
-export type SpringStylesConstructorTypeSwitchParams = {isPassive: boolean, spring: availableSpringParams}
+export type SpringStylesConstructorTypeSwitchParams = {isPassive: boolean, spring: AvailableSpringParams}
 
 export const springStylesConstructorTypeSwitch = (params: SpringStylesConstructorTypeSwitchParams) => {
     const {isPassive, spring} = params
     switch (spring.springType) {
         case SpringTypeEnum.BackgroundColorSpring : 
-            return backgroundColorSpring(isPassive, spring.activeBackgroundColor, spring.passiveBackgroundColor,)
+            return backgroundColorSpring(isPassive, spring.activeBackgroundColor, spring.passiveBackgroundColor)
         case SpringTypeEnum.TextColorSpring :
             return textColorSpring(isPassive, spring.activeTextColor, spring.passiveTextColor)
         case SpringTypeEnum.ScaleSpring : 
@@ -56,6 +59,8 @@ export const springStylesConstructorTypeSwitch = (params: SpringStylesConstructo
             return widthSpring(isPassive, spring.activeWidth, spring.passiveWidth)
         case SpringTypeEnum.BorderRadiusSpring :
             return borderRadiusSpring(isPassive, spring.activeBorderRadius, spring.passiveBorderRadius)
+        case SpringTypeEnum.RotateZSpring :
+            return rotateZSpring(isPassive, spring.activeRotateZ, spring.passiveRotateZ)
         default : 
             return {}
     }

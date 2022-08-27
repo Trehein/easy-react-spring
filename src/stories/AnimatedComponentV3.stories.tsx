@@ -4,20 +4,11 @@ import { DemoBoxWithAnimation } from '../demoComponents/DemoBox/DemoBoxWithAnima
 export default {
     title: 'DemoBoxWithAnimation',
     component: DemoBoxWithAnimation,
-    argTypes: {
-        activeBorderRadius: '20% 0% 0% 10%',
-        passiveBorderRadius: '50% 50% 50% 50%',
-        activeBackgroundColor: 'rebeccapurple', 
-        passiveBackgroundColor: 'salmon',
-        activeTextColor: 'salmon', 
-        passiveTextColor: 'rebeccapurple', 
-        activeFontSize: '1em', 
-        passiveFontSize: '1.5em', 
-        activeHeight: '200px',
-        passiveHeight: '300px', 
-        activeWidth: '200px:', 
-        passiveWidth: '300px'
-    },
+    argTypes: {},
+}
+
+export enum DemoSpringArray {
+    EverySpring = 'EverySpring'
 }
 
 const Template = (args: any) => {
@@ -35,27 +26,35 @@ const Template = (args: any) => {
             passiveHeight={args.passiveHeight} 
             activeWidth={args.activeWidth} 
             passiveWidth={args.passiveWidth}
+            activeRotateZ={args.activeRotateZ}
+            passiveRotateZ={args.passiveRotateZ}
+            activeScale={args.activeScale}
+            demoSpringArrayEnum={args.demoSpringArrayEnum}
         />
     )
 }
 
-const defaultArgs = {
-        // activeBorderRadius: '20% 0% 0% 10%',
+const everyArgs = {
+        activeBorderRadius: '20% 0% 0% 10%',
         passiveBorderRadius: '50% 50% 50% 50%',
         activeBackgroundColor: 'red', 
         passiveBackgroundColor: 'orange',
-        // activeTextColor: 'salmon', 
-        // passiveTextColor: 'rebeccapurple', 
+        activeTextColor: 'rebeccapurple',
+        passiveTextColor: 'salmon',
         activeFontSize: '1em', 
         passiveFontSize: '1.5em', 
         activeHeight: '200px',
         passiveHeight: '250px', 
         activeWidth: '200px:', 
-        passiveWidth: '250px'
+        passiveWidth: '250px',
+        activeRotateZ: 270,
+        passiveRotateZ: 0,
+        activeScale: .5,
+        passiveScale: 1,
+        demoSpringArrayEnum: DemoSpringArray.EverySpring
     }
 
-export const Primary = Template.bind({});
-Primary.args = {
-    ...defaultArgs,
-    activeBorderRadius: '20% 0% 0% 10%',
+export const EverythingNotRecommended = Template.bind({});
+EverythingNotRecommended.args = {
+    ...everyArgs,
 };

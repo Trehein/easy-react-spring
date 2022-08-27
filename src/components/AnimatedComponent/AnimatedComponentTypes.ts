@@ -42,6 +42,12 @@ export type BorderRadiusSpring = {
     passiveBorderRadius: string
 }
 
+export type RotateZSpring = {
+    springType: SpringTypeEnum,
+    activeRotateZ: number,
+    passiveRotateZ: number
+}
+
 export enum SpringTypeEnum {
     BackgroundColorSpring = 'BackgroundColorSpring',
     TextColorSpring = 'TextColorSpring',
@@ -49,7 +55,8 @@ export enum SpringTypeEnum {
     FontSizeSpring = 'FontSizeSpring',
     HeightSpring = 'HeightSpring',
     WidthSpring = 'WidthSpring',
-    BorderRadiusSpring = 'BorderRadiusSpring'
+    BorderRadiusSpring = 'BorderRadiusSpring',
+    RotateZSpring = 'RotateZSpring'
 }
 
 export type ActiveSpringsArray = Array<availableSpringParams>
