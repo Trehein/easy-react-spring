@@ -1,17 +1,15 @@
 import React from 'react';
 import { DemoBoxWithAnimation } from '../demoComponents/DemoBox/DemoBoxWithAnimations';
+import { DemoSpringArray } from '../demoComponents/demoSprings/demoSpringEnums';
 
 export default {
-    title: 'DemoBoxWithAnimation',
+    title: 'Animated Component Examples',
     component: DemoBoxWithAnimation,
     argTypes: {},
 }
 
-export enum DemoSpringArray {
-    EverySpring = 'EverySpring'
-}
-
 const Template = (args: any) => {
+
     return (
         <DemoBoxWithAnimation 
             activeBorderRadius={args.activeBorderRadius}
@@ -29,6 +27,15 @@ const Template = (args: any) => {
             activeRotateZ={args.activeRotateZ}
             passiveRotateZ={args.passiveRotateZ}
             activeScale={args.activeScale}
+            passiveScale={args.passiveScale}
+            activeOpacity={args.activeOpacity}
+            passiveOpacity={args.passiveOpacity}
+            activeBorderWidth={args.activeBorder}
+            passiveBorderWidth={args.passiveBorder}
+            activeBorderStyle={args.activeBorderStyle}
+            passiveBorderStyle={args.passiveBorder}
+            activeBorderColor={args.activeBorderColor}
+            passiveBorderColor={args.passiveBorderColor}
             demoSpringArrayEnum={args.demoSpringArrayEnum}
         />
     )
@@ -51,6 +58,14 @@ const everyArgs = {
         passiveRotateZ: 0,
         activeScale: .5,
         passiveScale: 1,
+        activeOpacity: 0,
+        passiveOpacity: 1,
+        activeBorderWidth: '2px',
+        passiveBorderWidth: '5px',
+        activeBorderStyle: 'dashed',
+        passiveBorderStyle: 'solid',
+        activeBorderColor: 'green',
+        passiveBorderColor: 'black',
         demoSpringArrayEnum: DemoSpringArray.EverySpring
     }
 

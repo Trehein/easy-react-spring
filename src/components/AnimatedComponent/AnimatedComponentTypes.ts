@@ -1,4 +1,4 @@
-import { availableSpringParams } from "../../spring-utils/springStylesConstructor"
+import { AvailableSpringParams } from "../../spring-utils/springStylesConstructor"
 
 export type BackgroundColorSpringParams = {
     springType: SpringTypeEnum,
@@ -48,15 +48,35 @@ export type RotateZSpring = {
     passiveRotateZ: number
 }
 
+export type OpacitySpring = {
+    springType: SpringTypeEnum,
+    activeOpacity: number,
+    passiveOpacity: number
+}
+
+export type BorderSpring = {
+    springType: SpringTypeEnum,
+    // activeBorderWidth?: string,
+    // passiveBorderWidth?: string,
+    activeBorderWidth: string,
+    passiveBorderWidth: string,
+    activeBorderStyle: string,
+    passiveBorderStyle: string,
+    activeBorderColor: string,
+    passiveBorderColor: string,
+}
+
 export enum SpringTypeEnum {
     BackgroundColorSpring = 'BackgroundColorSpring',
+    BorderRadiusSpring = 'BorderRadiusSpring',
+    BorderSpring = 'BorderSpring',
     TextColorSpring = 'TextColorSpring',
     ScaleSpring = 'ScaleSpring',
     FontSizeSpring = 'FontSizeSpring',
     HeightSpring = 'HeightSpring',
     WidthSpring = 'WidthSpring',
-    BorderRadiusSpring = 'BorderRadiusSpring',
-    RotateZSpring = 'RotateZSpring'
+    RotateZSpring = 'RotateZSpring',
+    OpacitySpring = 'OpacitySpring'
 }
 
-export type ActiveSpringsArray = Array<availableSpringParams>
+export type ActiveSpringsArray = Array<AvailableSpringParams>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { AnimatedComponent } from '../../components'
-import { DemoSpringArray } from '../../stories/AnimatedComponentV3.stories'
+import { DemoSpringArray } from '../demoSprings/demoSpringEnums'
 import { demoSpringSwitch } from '../demoSprings/demoSpringSwitch'
 import { DemoBox } from './DemoBox'
 
@@ -21,12 +21,21 @@ export type DemoBoxWithAnimationArgs = {
     passiveRotateZ?: number,
     activeScale?: number,
     passiveScale?: number,
+    activeOpacity?: number,
+    passiveOpacity?: number,
+    activeBorderWidth?: string,
+    passiveBorderWidth?: string,
+    activeBorderStyle?: string,
+    passiveBorderStyle?: string,
+    activeBorderColor?: string,
+    passiveBorderColor?: string,
     demoSpringArrayEnum: DemoSpringArray
 }
 
 export const DemoBoxWithAnimation: React.FC<DemoBoxWithAnimationArgs> = (args) => {
     const [isPassive, setIsPassive] = useState(true)
     const springs = demoSpringSwitch(args.demoSpringArrayEnum, args)
+
 
     return (
         <div 

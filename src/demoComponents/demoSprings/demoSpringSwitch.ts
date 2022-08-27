@@ -1,5 +1,5 @@
 import { AvailableSpringParams } from "../../spring-utils";
-import { DemoSpringArray } from "../../stories/AnimatedComponentV3.stories";
+import { DemoSpringArray } from "./demoSpringEnums";
 import { everySpring } from "./everySpring";
 
 export const demoSpringSwitch = (demoSpringArrayEnum: DemoSpringArray, args: AvailableSpringParams) => {

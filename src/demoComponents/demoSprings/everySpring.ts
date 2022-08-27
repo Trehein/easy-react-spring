@@ -2,6 +2,7 @@ import { ActiveSpringsArray, SpringTypeEnum } from "../../components/AnimatedCom
 import { AvailableSpringParams } from "../../spring-utils"
 
 export const everySpring = (params: AvailableSpringParams) => {
+
     const { 
         activeBackgroundColor, 
         passiveBackgroundColor, 
@@ -19,7 +20,17 @@ export const everySpring = (params: AvailableSpringParams) => {
         passiveRotateZ,
         activeScale,
         passiveScale,
+        activeOpacity,
+        passiveOpacity,
+        activeBorderWidth,
+        passiveBorderWidth,
+        activeBorderStyle,
+        passiveBorderStyle,
+        activeBorderColor,
+        passiveBorderColor
     } = params
+
+    // console.log('activeOpacity', activeOpacity)
     const activeSpringsArray: ActiveSpringsArray = [
         {
             springType: SpringTypeEnum.BackgroundColorSpring,
@@ -60,6 +71,20 @@ export const everySpring = (params: AvailableSpringParams) => {
             springType: SpringTypeEnum.ScaleSpring,
             activeScale: activeScale ? activeScale : 1.2,
             passiveScale: passiveScale ? passiveScale : 1
+        },
+        {
+            springType: SpringTypeEnum.OpacitySpring,
+            activeOpacity: activeOpacity > 0 ? activeOpacity : 0, // seems superfluous but it need the > for some reason...
+            passiveOpacity: passiveOpacity ? passiveOpacity : 1
+        },
+        {
+            springType: SpringTypeEnum.BorderSpring,
+            activeBorderWidth: activeBorderWidth ? activeBorderWidth : '.1em',
+            passiveBorderWidth: passiveBorderWidth ? passiveBorderWidth : '.25em',
+            activeBorderStyle: activeBorderStyle ? activeBorderStyle : 'dashed',
+            passiveBorderStyle: passiveBorderStyle ? passiveBorderStyle : 'solid',
+            activeBorderColor: activeBorderColor ? activeBorderColor : 'orange',
+            passiveBorderColor: passiveBorderColor ? passiveBorderColor : 'blue'
         }
     ]
 

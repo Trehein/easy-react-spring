@@ -23,3 +23,16 @@ export const backgroundColorSpring = (isPassive: boolean, activeBackgroundColor:
         reverse: isPassive
     })
 }
+
+export const opacitySpring = (isPassive: boolean, activeOpacity: number, passiveOpacity: number): object => {
+    // console.log('in opacity spring', passiveOpacity, activeOpacity)
+    return useSpring({
+        to: { 
+            opacity: isPassive ? passiveOpacity : activeOpacity, 
+        },
+        config: {
+            duration: 500
+        },
+        reverse: isPassive
+    })
+}

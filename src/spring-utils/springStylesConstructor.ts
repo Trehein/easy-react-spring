@@ -1,6 +1,6 @@
 import { ActiveSpringsArray, SpringTypeEnum } from "../components/AnimatedComponent/AnimatedComponentTypes"
-import { borderRadiusSpring } from "./borderSpringUtils"
-import { backgroundColorSpring, textColorSpring } from "./colorSpringUtils"
+import { borderRadiusSpring, borderSpring } from "./borderSpringUtils"
+import { backgroundColorSpring, opacitySpring, textColorSpring } from "./colorSpringUtils"
 import { fontSizeSpring, heightSpring, scaleSpring, widthSpring } from "./sizeSpringUtils"
 import { rotateZSpring } from "./positionSpringUtils"
 
@@ -12,6 +12,8 @@ export type SpringStylesConstructorParams = {
 export const springStylesConstructor = (params: SpringStylesConstructorParams): object => {
     const {isPassive, springs} = params
     let springStylesObj: object = {}
+
+    console.log('springs in springStylesConstructor', springs)
 
     springs.forEach((spring: any) => {
         const springStylesConstructorObj = springStylesConstructorTypeSwitch({isPassive, spring})
@@ -37,12 +39,23 @@ export type AvailableSpringParams = {
     activeBorderRadius? : string,
     passiveBorderRadius? : string,
     activeRotateZ? : number,
-    passiveRotateZ? : number
+    passiveRotateZ? : number,
+    activeOpacity? : number,
+    passiveOpacity? : number,
+    activeBorder? : string,
+    passiveBorder? : string,
+    activeBorderWidth? : string,
+    passiveBorderWidth? : string,
+    activeBorderStyle? : string,
+    passiveBorderStyle? : string,
+    activeBorderColor? : string,
+    passiveBorderColor? : string
 }
 
 export type SpringStylesConstructorTypeSwitchParams = {isPassive: boolean, spring: AvailableSpringParams}
 
 export const springStylesConstructorTypeSwitch = (params: SpringStylesConstructorTypeSwitchParams) => {
+
     const {isPassive, spring} = params
     switch (spring.springType) {
         case SpringTypeEnum.BackgroundColorSpring : 
@@ -61,6 +74,18 @@ export const springStylesConstructorTypeSwitch = (params: SpringStylesConstructo
             return borderRadiusSpring(isPassive, spring.activeBorderRadius, spring.passiveBorderRadius)
         case SpringTypeEnum.RotateZSpring :
             return rotateZSpring(isPassive, spring.activeRotateZ, spring.passiveRotateZ)
+        case SpringTypeEnum.OpacitySpring :
+            return opacitySpring(isPassive, spring.activeOpacity, spring.passiveOpacity)
+        case SpringTypeEnum.BorderSpring :
+            return borderSpring(
+                isPassive, 
+                spring.activeBorderWidth, 
+                spring.passiveBorderWidth,
+                spring.activeBorderStyle,
+                spring.passiveBorderStyle,
+                spring.activeBorderColor,
+                spring.passiveBorderColor
+            )
         default : 
             return {}
     }
