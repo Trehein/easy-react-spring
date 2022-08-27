@@ -3,40 +3,69 @@ import { AnimatedComponent } from '../../components'
 import { ActiveSpringsArray, SpringTypeEnum } from '../../components/AnimatedComponent/AnimatedComponentTypes'
 import { DemoBox } from './DemoBox'
 
-export const DemoBoxWithAnimation: React.FC = () => {
+export type DemoBoxWithAnimationArgs = {
+    activeBackgroundColor?: string,
+    passiveBackgroundColor?: string,
+    activeTextColor?: string,
+    passiveTextColor?: string,
+    activeFontSize?: string,
+    passiveFontSize?: string,
+    activeHeight?: string,
+    passiveHeight?: string,
+    activeWidth?: string,
+    passiveWidth?: string,
+    activeBorderRadius?: string,
+    passiveBorderRadius?: string
+}
+
+export const DemoBoxWithAnimation: React.FC<DemoBoxWithAnimationArgs> = (args) => {
+    const {
+        activeBackgroundColor, 
+        passiveBackgroundColor,
+        activeTextColor, 
+        passiveTextColor, 
+        activeFontSize, 
+        passiveFontSize, 
+        activeHeight,
+        passiveHeight, 
+        activeWidth, 
+        passiveWidth, 
+        activeBorderRadius,
+        passiveBorderRadius,
+    } = args
     const [isPassive, setIsPassive] = useState(true)
+    console.log(activeBorderRadius)
     const springs: ActiveSpringsArray = [
         {
             springType: SpringTypeEnum.BackgroundColorSpring,
-            activeBackgroundColor: 'rebeccapurple',
-            passiveBackgroundColor: 'salmon',
+            activeBackgroundColor: activeBackgroundColor ? activeBackgroundColor : 'rebeccapurple',
+            passiveBackgroundColor: passiveBackgroundColor ? passiveBackgroundColor : 'salmon',
         },
         {
             springType: SpringTypeEnum.TextColorSpring,
-            activeTextColor: 'salmon',
-            passiveTextColor: 'rebeccapurple'
+            activeTextColor: activeTextColor ? activeTextColor : 'salmon',
+            passiveTextColor: passiveTextColor ? passiveTextColor : 'rebeccapurple'
         },
         {
             springType: SpringTypeEnum.FontSizeSpring,
-            activeFontSize: '1.5em',
-            passiveFontSize: '1em'
+            activeFontSize: activeFontSize ? activeFontSize : '1.5em',
+            passiveFontSize: passiveFontSize ? passiveFontSize : '1em'
         },
         {
             springType: SpringTypeEnum.HeightSpring,
-            activeHeight: '250px',
-            passiveHeight: '200px'
+            activeHeight: activeHeight ? activeHeight : '250px',
+            passiveHeight: passiveHeight ? passiveHeight : '200px'
         },
         {
             springType: SpringTypeEnum.WidthSpring,
-            activeWidth: '250px',
-            passiveWidth: '200px'
+            activeWidth: activeWidth ? activeWidth : '250px',
+            passiveWidth: passiveWidth ? passiveWidth : '200px'
         },
         {
             springType: SpringTypeEnum.BorderRadiusSpring,
-            activeBorderRadius: '50% 0% 0% 50%',
-            passiveBorderRadius: '50% 50% 50% 50%'
+            activeBorderRadius: activeBorderRadius ? activeBorderRadius : '50% 0% 0% 50%',
+            passiveBorderRadius: passiveBorderRadius ? passiveBorderRadius : '50% 50% 50% 50%'
         }
-
     ]
 
     return (
