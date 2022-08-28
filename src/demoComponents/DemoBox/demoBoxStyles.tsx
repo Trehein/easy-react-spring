@@ -7,6 +7,7 @@ export type DemoBoxStylesParams = {
     borderWidth?: string | undefined,
     borderStyle?: string | undefined,
     borderColor?: string | undefined,
+    borderRadius?: string | undefined
 }
 
 export const demoBoxStyles = (): any => {

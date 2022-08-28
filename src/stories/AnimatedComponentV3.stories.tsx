@@ -10,7 +10,6 @@ export default {
 }
 
 const Template = (args: any) => {
-
     return (
         <DemoBoxWithAnimation 
             activeBorderRadius={args.activeBorderRadius}
@@ -31,10 +30,10 @@ const Template = (args: any) => {
             passiveScale={args.passiveScale}
             activeOpacity={args.activeOpacity}
             passiveOpacity={args.passiveOpacity}
-            activeBorderWidth={args.activeBorder}
-            passiveBorderWidth={args.passiveBorder}
+            activeBorderWidth={args.activeBorderWidth}
+            passiveBorderWidth={args.passiveBorderWidth}
             activeBorderStyle={args.activeBorderStyle}
-            passiveBorderStyle={args.passiveBorder}
+            passiveBorderStyle={args.passiveBorderStyle}
             activeBorderColor={args.activeBorderColor}
             passiveBorderColor={args.passiveBorderColor}
             demoSpringArrayEnum={args.demoSpringArrayEnum}
@@ -111,7 +110,7 @@ FontSizeSpring.args = {
 };
 
 // Height Animation
-const heightSizeBoxStyleParams: DemoBoxStylesParams = {
+const heightBoxStyleParams: DemoBoxStylesParams = {
     width: '200px',
     backgroundColor: 'orange',
     color: 'white'
@@ -123,12 +122,154 @@ const heightArgs = {
         demoSpringArrayEnum: DemoSpringArray.HeightSpring,
         animationButtonText: 'Change Height',
         demoBoxText: 'Height',
-        demoBoxStyleParams: heightSizeBoxStyleParams
+        demoBoxStyleParams: heightBoxStyleParams
     }
 
 export const HeightSpring = Template.bind({});
 HeightSpring.args = {
     ...heightArgs
+}
+
+// Width Animation
+const widthBoxStyleParams: DemoBoxStylesParams = {
+    height: '250px',
+    backgroundColor: 'orange',
+    color: 'white'
+}
+
+const widthArgs = {
+        activeWidth: '250px', 
+        passiveWidth: '100px',
+        demoSpringArrayEnum: DemoSpringArray.WidthSpring,
+        animationButtonText: 'Change Width',
+        demoBoxText: 'Width',
+        demoBoxStyleParams: widthBoxStyleParams
+    }
+
+export const WidthSpring = Template.bind({});
+WidthSpring.args = {
+    ...widthArgs
+}
+
+// Border Radius Animation
+const borderRadiusBoxStyleParams: DemoBoxStylesParams = {
+    height: '200px',
+    width: '200px',
+    borderWidth: '.5em',
+    borderStyle: 'solid',
+    borderColor: 'black'
+}
+
+const borderRadiusArgs = {
+        activeBorderRadius: '20% 0% 0% 10%',
+        passiveBorderRadius: '50% 50% 50% 50%',
+        demoSpringArrayEnum: DemoSpringArray.BorderRadiusSpring,
+        animationButtonText: 'Change Border Radius',
+        demoBoxText: 'Border Radius',
+        demoBoxStyleParams: borderRadiusBoxStyleParams
+    }
+
+export const BorderRadiusSpring = Template.bind({});
+BorderRadiusSpring.args = {
+    ...borderRadiusArgs
+}
+
+// Rotate Z Animation
+const rotateZBoxStyleParams: DemoBoxStylesParams = {
+    height: '200px',
+    width: '200px',
+    borderWidth: '.25em',
+    borderStyle: 'solid',
+    borderColor: 'black',
+    borderRadius: '50% 0% 0% 0%'
+}
+
+const rotateZArgs = {
+    activeRotateZ: 540,
+    passiveRotateZ: 0,
+    demoSpringArrayEnum: DemoSpringArray.RotateZSpring,
+    animationButtonText: 'Change Rotate Z',
+    demoBoxText: 'Rotate Z',
+    demoBoxStyleParams: rotateZBoxStyleParams
+}
+
+export const RotateZSpring = Template.bind({})
+RotateZSpring.args = {
+    ...rotateZArgs
+}
+
+// Scale Spring Animation
+const scaleBoxStyleParams: DemoBoxStylesParams = {
+    height: '200px',
+    width: '200px',
+    borderWidth: '.25em',
+    borderStyle: 'solid',
+    borderColor: 'black',
+    fontSize: '2em'
+}
+
+const scaleArgs = {
+    activeScale: .5,
+    passiveScale: 1,
+    demoSpringArrayEnum: DemoSpringArray.ScaleSpring,
+    animationButtonText: 'Change Scale',
+    demoBoxText: 'Scale',
+    demoBoxStyleParams: scaleBoxStyleParams
+}
+
+export const ScaleSpring = Template.bind({})
+ScaleSpring.args = {
+    ...scaleArgs
+}
+
+// Opacity Spring Animation
+const opacityBoxStyleParams: DemoBoxStylesParams = {
+    height: '200px',
+    width: '200px',
+    borderWidth: '.25em',
+    borderStyle: 'solid',
+    borderColor: 'black',
+    fontSize: '2em',
+    backgroundColor: 'orange'
+}
+
+const opacityArgs = {
+    activeOpacity: .1,
+    passiveOpacity: 1,
+    demoSpringArrayEnum: DemoSpringArray.OpacitySpring,
+    animationButtonText: 'Change Opacity',
+    demoBoxText: 'Opacity',
+    demoBoxStyleParams: opacityBoxStyleParams
+}
+
+export const OpacitySpring = Template.bind({})
+OpacitySpring.args = {
+    ...opacityArgs
+}
+
+// Border Spring Animations
+const borderBoxStyleParams: DemoBoxStylesParams = {
+    height: '200px',
+    width: '200px',
+    fontSize: '2em',
+}
+
+const borderArgs = {
+    activeBorderWidth: '.1em',
+    passiveBorderWidth: '.25em',
+    activeBorderStyle: 'solid',
+    passiveBorderStyle: 'solid',
+    activeBorderColor: 'red',
+    passiveBorderColor: 'blue',
+    demoSpringArrayEnum: DemoSpringArray.BorderSpring,
+    animationButtonText: 'Change Border',
+    demoBoxText: 'Border',
+    demoBoxStyleParams: borderBoxStyleParams
+}
+
+export const BorderSpring = Template.bind({})
+BorderSpring.args = {
+    ...borderArgs
 }
 
 // Every available animation at once... Don't do this
