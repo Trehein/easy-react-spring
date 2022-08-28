@@ -1,7 +1,7 @@
-import { ActiveSpringsArray, SpringTypeEnum } from "../../components/AnimatedComponent/AnimatedComponentTypes"
-import { AvailableSpringParams } from "../../spring-utils"
+import { ActiveSpringsArray, SpringTypeEnum } from "../../../components/AnimatedComponent/AnimatedComponentTypes"
+import { AvailableSpringParams } from "../../../spring-utils"
 
-export const everySpring = (params: AvailableSpringParams) => {
+export const everySpringArray = (params: AvailableSpringParams) => {
 
     const { 
         activeBackgroundColor, 
@@ -30,7 +30,6 @@ export const everySpring = (params: AvailableSpringParams) => {
         passiveBorderColor
     } = params
 
-    // console.log('activeOpacity', activeOpacity)
     const activeSpringsArray: ActiveSpringsArray = [
         {
             springType: SpringTypeEnum.BackgroundColorSpring,

@@ -13,8 +13,6 @@ export const springStylesConstructor = (params: SpringStylesConstructorParams): 
     const {isPassive, springs} = params
     let springStylesObj: object = {}
 
-    // console.log('springs in springStylesConstructor', springs)
-
     springs.forEach((spring: any) => {
         const springStylesConstructorObj = springStylesConstructorTypeSwitch({isPassive, spring})
         springStylesObj = {...springStylesObj, ...springStylesConstructorObj}

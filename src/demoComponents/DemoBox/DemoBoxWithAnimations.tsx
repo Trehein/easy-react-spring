@@ -3,6 +3,7 @@ import { AnimatedComponent } from '../../components'
 import { DemoSpringArray } from '../demoSprings/demoSpringEnums'
 import { demoSpringSwitch } from '../demoSprings/demoSpringSwitch'
 import { DemoBox } from './DemoBox'
+import { DemoBoxStylesParams } from './demoBoxStyles'
 
 export type DemoBoxWithAnimationArgs = {
     activeBackgroundColor?: string,
@@ -29,27 +30,35 @@ export type DemoBoxWithAnimationArgs = {
     passiveBorderStyle?: string,
     activeBorderColor?: string,
     passiveBorderColor?: string,
-    demoSpringArrayEnum: DemoSpringArray
+    demoSpringArrayEnum: DemoSpringArray,
+    animationButtonText: string,
+    demoBoxText: string,
+    demoBoxStyleParams: DemoBoxStylesParams
 }
 
 export const DemoBoxWithAnimation: React.FC<DemoBoxWithAnimationArgs> = (args) => {
     const [isPassive, setIsPassive] = useState(true)
     const springs = demoSpringSwitch(args.demoSpringArrayEnum, args)
-
+    const {animationButtonText, demoBoxText, demoBoxStyleParams} = args
 
     return (
-        <div 
-            onClick={() => setIsPassive(!isPassive)}
-            style={{cursor: 'pointer', height: '200px', width: '200px'}}
-        >
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+            <button 
+                onClick={() => setIsPassive(!isPassive)}
+                style={{width: 'fit-content'}}
+            >
+                {animationButtonText} 
+            </button>
             <AnimatedComponent 
                 isPassive={isPassive}
                 springs={springs}
+                demoBoxStyleParams={demoBoxStyleParams}
             >
                 <DemoBox>
-                    <div>Test Component</div>
+                    <div>{demoBoxText}</div>
                 </DemoBox>
             </AnimatedComponent>
         </div>
+
     )
 }

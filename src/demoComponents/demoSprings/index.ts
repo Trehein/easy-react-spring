@@ -1,2 +1,2 @@
-export * from './everySpring'
-export * from './backgroundColorSpringArray'
+export * from './demoSpringArrays'
+export * from './demoSpringSwitch'

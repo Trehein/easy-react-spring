@@ -1,12 +1,24 @@
+export type DemoBoxStylesParams = {
+    height?: string | undefined,
+    width?: string | undefined,
+    fontSize?: string | undefined,
+    backgroundColor?: string | undefined,
+    color?: string | undefined,
+    borderWidth?: string | undefined,
+    borderStyle?: string | undefined,
+    borderColor?: string | undefined,
+}
+
 export const demoBoxStyles = (): any => {
+
     return {
         demoBox: {
-            height: '200px',
-            width: '200px',
+            height: '100%',
+            width: '100%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            fontFamily: 'sans-serif'
+            fontFamily: 'sans-serif',
         }
     }
 }
