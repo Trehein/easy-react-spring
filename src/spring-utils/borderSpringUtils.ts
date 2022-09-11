@@ -1,11 +1,12 @@
 import { useSpring } from 'react-spring'
+import { SpringConfigEnum, springConfigsSwitch } from './springConfigUtils'
 
 export const borderRadiusSpring = (
         isPassive: boolean, 
         activeBorderRadius: string, 
-        passiveBorderRadius: string
+        passiveBorderRadius: string,
+        springConfig?: SpringConfigEnum
     ): object => {
-    // console.log('isPassive borderRadius', isPassive)
     return useSpring({
         // from: {
         //     borderRadius: isPassive ? passiveBorderRadius : activeBorderRadius 
@@ -13,9 +14,7 @@ export const borderRadiusSpring = (
         to: { 
             borderRadius: isPassive ? passiveBorderRadius : activeBorderRadius
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isPassive,
         // loop: isPassive    
     })
@@ -28,7 +27,8 @@ export const borderSpring = (
         activeBorderStyle: string,
         passiveBorderStyle: string,
         activeBorderColor: string,
-        passiveBorderColor: string
+        passiveBorderColor: string,
+        springConfig?: SpringConfigEnum
     ): object => {
     return useSpring({
         to: { 
@@ -36,9 +36,7 @@ export const borderSpring = (
             borderStyle: isPassive ? passiveBorderStyle : activeBorderStyle,
             borderColor: isPassive ? passiveBorderColor : activeBorderColor
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isPassive,
     })
 }

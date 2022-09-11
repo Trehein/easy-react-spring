@@ -1,17 +1,18 @@
 import { useSpring } from "react-spring"
+import { SpringConfigEnum } from "./springConfigUtils"
+import { springConfigsSwitch } from "./springConfigUtils"
 
 export const scaleSpring = (
         isPassive: boolean, 
         activeScale: number, 
-        passiveScale: number
+        passiveScale: number,
+        springConfig?: SpringConfigEnum
     ): object => {
     return useSpring({
         to: { 
             scale: isPassive ? passiveScale : activeScale
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isPassive    
     })
 } 
@@ -19,15 +20,14 @@ export const scaleSpring = (
 export const fontSizeSpring = (
         isPassive: boolean, 
         activeFontSize: string, 
-        passiveFontSize: string
+        passiveFontSize: string,
+        springConfig?: SpringConfigEnum
     ): object => {
     return useSpring({
         to: { 
             fontSize: isPassive ? passiveFontSize : activeFontSize 
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isPassive    
     })
 }
@@ -35,7 +35,8 @@ export const fontSizeSpring = (
 export const heightSpring = (
         isPassive: boolean, 
         activeHeight: string, 
-        passiveHeight: string
+        passiveHeight: string,
+        springConfig?: SpringConfigEnum
     ): object => {
     return useSpring({
         to: { 
@@ -45,9 +46,7 @@ export const heightSpring = (
             alignItems: 'center',
             fontFamily: 'sans-serif'
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isPassive  
     })
 }
@@ -55,7 +54,8 @@ export const heightSpring = (
 export const widthSpring = (
         isActive: boolean, 
         activeWidth: string, 
-        passiveWidth: string
+        passiveWidth: string,
+        springConfig?: SpringConfigEnum
     ): object => {
     return useSpring({
         to: { 
@@ -65,9 +65,7 @@ export const widthSpring = (
             alignItems: 'center',
             fontFamily: 'sans-serif'
         },
-        config: {
-            duration: 500
-        },
+        config: springConfig ? springConfigsSwitch(springConfig) : { duration: 500 },
         reverse: isActive  
     })
 }

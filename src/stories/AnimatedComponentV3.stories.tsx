@@ -2,6 +2,7 @@ import React from 'react';
 import { DemoBoxStylesParams } from '../demoComponents/DemoBox/demoBoxStyles';
 import { DemoBoxWithAnimation } from '../demoComponents/DemoBox/DemoBoxWithAnimations';
 import { DemoSpringArray } from '../demoComponents/demoSprings/demoSpringEnums';
+import { SpringConfigEnum } from '../spring-utils';
 
 export default {
     title: 'Animated Component Examples',
@@ -40,6 +41,7 @@ const Template = (args: any) => {
             animationButtonText={args.animationButtonText}
             demoBoxText={args.demoBoxText}
             demoBoxStyleParams={args.demoBoxStyleParams}
+            springConfig={args.springConfig}
         />
     )
 }
@@ -57,7 +59,8 @@ const backgroundColorArgs = {
         demoSpringArrayEnum: DemoSpringArray.BackgroundColorSpring,
         animationButtonText: 'Change Background Color',
         demoBoxText: 'Background Color',
-        demoBoxStyleParams: backgroundColorBoxStyleParams
+        demoBoxStyleParams: backgroundColorBoxStyleParams,
+        springConfig: SpringConfigEnum.DEFAULT
     }
 
 export const BackgroundColorSpring = Template.bind({});
@@ -81,7 +84,8 @@ const textColorArgs = {
         demoSpringArrayEnum: DemoSpringArray.TextColorSpring,
         animationButtonText: 'Change Text Color',
         demoBoxText: 'Text Color',
-        demoBoxStyleParams: textColorBoxStyleParams
+        demoBoxStyleParams: textColorBoxStyleParams,
+        springConfig: SpringConfigEnum.DEFAULT
     }
 
 export const TextColorSpring = Template.bind({});
@@ -101,7 +105,8 @@ const fontSizeArgs = {
         demoSpringArrayEnum: DemoSpringArray.FontSizeSpring,
         animationButtonText: 'Change Font Size',
         demoBoxText: 'Font Size',
-        demoBoxStyleParams: fontSizeBoxStyleParams
+        demoBoxStyleParams: fontSizeBoxStyleParams,
+        springConfig: SpringConfigEnum.WOBBLY
     }
 
 export const FontSizeSpring = Template.bind({});
@@ -122,7 +127,8 @@ const heightArgs = {
         demoSpringArrayEnum: DemoSpringArray.HeightSpring,
         animationButtonText: 'Change Height',
         demoBoxText: 'Height',
-        demoBoxStyleParams: heightBoxStyleParams
+        demoBoxStyleParams: heightBoxStyleParams,
+        springConfig: SpringConfigEnum.WOBBLY
     }
 
 export const HeightSpring = Template.bind({});
@@ -143,7 +149,8 @@ const widthArgs = {
         demoSpringArrayEnum: DemoSpringArray.WidthSpring,
         animationButtonText: 'Change Width',
         demoBoxText: 'Width',
-        demoBoxStyleParams: widthBoxStyleParams
+        demoBoxStyleParams: widthBoxStyleParams,
+        springConfig: SpringConfigEnum.WOBBLY
     }
 
 export const WidthSpring = Template.bind({});
@@ -166,7 +173,8 @@ const borderRadiusArgs = {
         demoSpringArrayEnum: DemoSpringArray.BorderRadiusSpring,
         animationButtonText: 'Change Border Radius',
         demoBoxText: 'Border Radius',
-        demoBoxStyleParams: borderRadiusBoxStyleParams
+        demoBoxStyleParams: borderRadiusBoxStyleParams,
+        springConfig: SpringConfigEnum.WOBBLY
     }
 
 export const BorderRadiusSpring = Template.bind({});
@@ -190,7 +198,8 @@ const rotateZArgs = {
     demoSpringArrayEnum: DemoSpringArray.RotateZSpring,
     animationButtonText: 'Change Rotate Z',
     demoBoxText: 'Rotate Z',
-    demoBoxStyleParams: rotateZBoxStyleParams
+    demoBoxStyleParams: rotateZBoxStyleParams,
+    springConfig: SpringConfigEnum.WOBBLY
 }
 
 export const RotateZSpring = Template.bind({})
@@ -214,7 +223,8 @@ const scaleArgs = {
     demoSpringArrayEnum: DemoSpringArray.ScaleSpring,
     animationButtonText: 'Change Scale',
     demoBoxText: 'Scale',
-    demoBoxStyleParams: scaleBoxStyleParams
+    demoBoxStyleParams: scaleBoxStyleParams,
+    springConfig: SpringConfigEnum.WOBBLY
 }
 
 export const ScaleSpring = Template.bind({})
@@ -239,7 +249,8 @@ const opacityArgs = {
     demoSpringArrayEnum: DemoSpringArray.OpacitySpring,
     animationButtonText: 'Change Opacity',
     demoBoxText: 'Opacity',
-    demoBoxStyleParams: opacityBoxStyleParams
+    demoBoxStyleParams: opacityBoxStyleParams,
+    springConfig: SpringConfigEnum.WOBBLY
 }
 
 export const OpacitySpring = Template.bind({})
@@ -264,7 +275,8 @@ const borderArgs = {
     demoSpringArrayEnum: DemoSpringArray.BorderSpring,
     animationButtonText: 'Change Border',
     demoBoxText: 'Border',
-    demoBoxStyleParams: borderBoxStyleParams
+    demoBoxStyleParams: borderBoxStyleParams,
+    springConfig: SpringConfigEnum.WOBBLY
 }
 
 export const BorderSpring = Template.bind({})
@@ -306,7 +318,8 @@ const everyArgs = {
         demoSpringArrayEnum: DemoSpringArray.EverySpring,
         animationButtonText: 'Change Everything',
         demoBoxText: 'Everything',
-        demoBoxStyleParams: everyBoxStyleParams
+        demoBoxStyleParams: everyBoxStyleParams,
+        springConfig: SpringConfigEnum.WOBBLY
     }
 
 export const Everything = Template.bind({});

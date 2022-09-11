@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { AnimatedComponent } from '../../components'
+import { SpringConfigEnum } from '../../spring-utils'
 import { DemoSpringArray } from '../demoSprings/demoSpringEnums'
 import { demoSpringSwitch } from '../demoSprings/demoSpringSwitch'
 import { DemoBox } from './DemoBox'
@@ -34,12 +35,13 @@ export type DemoBoxWithAnimationArgs = {
     animationButtonText: string,
     demoBoxText: string,
     demoBoxStyleParams: DemoBoxStylesParams
+    springConfig?: SpringConfigEnum,
 }
 
 export const DemoBoxWithAnimation: React.FC<DemoBoxWithAnimationArgs> = (args) => {
     const [isPassive, setIsPassive] = useState(true)
     const springs = demoSpringSwitch(args.demoSpringArrayEnum, args)
-    const {animationButtonText, demoBoxText, demoBoxStyleParams} = args
+    const {animationButtonText, demoBoxText, demoBoxStyleParams, springConfig} = args
 
     return (
         <div style={{display: 'flex', flexDirection: 'column'}}>
@@ -53,6 +55,7 @@ export const DemoBoxWithAnimation: React.FC<DemoBoxWithAnimationArgs> = (args) =
                 isPassive={isPassive}
                 springs={springs}
                 demoBoxStyleParams={demoBoxStyleParams}
+                springConfig={springConfig}
             >
                 <DemoBox>
                     <div>{demoBoxText}</div>
